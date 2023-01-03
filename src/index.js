@@ -36,3 +36,5 @@ app.all("*", async (req, res) => {
 app.listen(process.env.port, () => {
     console.log(`Running on port ${process.env.port}.`);
 });
+
+module.exports = app;
