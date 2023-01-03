@@ -2,13 +2,10 @@
     "name": "profileviewcount",
     "version": "1.0.0",
     "description": "A little image generation tool that displays the number of views that your profile has.",
-    "main": "index.js",
-    "engines": {
-        "node": "18.x"
-    },
+    "main": "src/index.js",
     "scripts": {
-        "test": "nodemon index.js",
-        "start": "node index.js",
+        "test": "nodemon src/index.js",
+        "start": "node src/index.js",
         "format": "npx prettier --write .",
         "lint": "eslint . --ext .js",
         "lint:fix": "eslint . --ext .js --fix"
