@@ -27,7 +27,7 @@ app.get("/:profile", async (req, res) => {
 });
 
 app.all("*", async (req, res) => {
-    const url = `https://img.shields.io/badge/Error-Invalid%20Endpoint-red?style=for-the-badge`;
+    const url = "https://img.shields.io/badge/Error-Invalid%20Endpoint-red?style=for-the-badge";
     const img = await fetch(url).then((data) => data.text());
     res.set("Content-Type", "image/svg+xml");
     res.send(img);
