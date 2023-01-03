@@ -10,7 +10,7 @@ const fetch = (...args) => import("node-fetch").then(({ default: fetch }) => fet
 app.get("/:profile", async (req, res) => {
     const { profile } = req.params;
     const { style, color } = req.query;
-    var views = (await db.query(`SELECT views FROM profileviews WHERE \`identifier\`="${profile}"`))[0];
+    var views = (await db.query(`SELECT views FROM profileviews WHERE \`identifier\`="${db.getPool().escape(profile)}"`))[0];
     var url;
     if (!views) {
         views = 1;
