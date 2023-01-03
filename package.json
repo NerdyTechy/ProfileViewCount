@@ -1,0 +1,29 @@
+{
+  "name": "profileviewcount",
+  "version": "1.0.0",
+  "description": "A little image generation tool that displays the number of views that your profile has.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NerdyTechy/ProfileViewCount.git"
+  },
+  "author": "NerdyTechy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NerdyTechy/ProfileViewCount/issues"
+  },
+  "homepage": "https://github.com/NerdyTechy/ProfileViewCount#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mysql2": "^2.3.3",
+    "node-fetch": "^3.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
