@@ -21,7 +21,6 @@ app.get('/:profile', async (req, res) => {
         url = `https://img.shields.io/badge/Profile%20Views-${views + 1}-${color ?? 'blue'}?style=${style ?? 'for-the-badge'}`;
         db.query(`UPDATE \`profileviews\` SET \`views\` = '${views + 1}' WHERE \`profileviews\`.\`identifier\` = ${db.getPool().escape(profile)};`);
     }
-    console.log(views);
     const img = await fetch(url).then(data => data.text());
     res.set("Content-Type", "image/svg+xml");
     res.send(img);
