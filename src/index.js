@@ -17,7 +17,7 @@ app.get("/:profile", async (req, res) => {
         url = `https://img.shields.io/badge/Profile%20Views-${views}-${color ?? "blue"}?style=${style ?? "for-the-badge"}`;
         db.query(`INSERT INTO \`profileviews\` (\`identifier\`, \`views\`) VALUES (${db.getPool().escape(profile)}, '1');`);
     } else {
-        views = views["views"];
+        views = views.views;
         url = `https://img.shields.io/badge/Profile%20Views-${views + 1}-${color ?? "blue"}?style=${style ?? "for-the-badge"}`;
         db.query(`UPDATE \`profileviews\` SET \`views\` = '${views + 1}' WHERE \`profileviews\`.\`identifier\` = ${db.getPool().escape(profile)};`);
     }
