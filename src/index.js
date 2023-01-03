@@ -9,16 +9,16 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 
 app.get('/:profile', async (req, res) => {
     const { profile } = req.params;
-    const { style } = req.query;
+    const { style, color } = req.query;
     var views = (await db.query(`SELECT views FROM profileviews WHERE \`identifier\`="${profile}"`))[0];
     var url;
     if (!views){
         views = 1;
-        url = `https://img.shields.io/badge/Profile%20Views-${views}-blue?style=${style ?? 'for-the-badge'}`;
+        url = `https://img.shields.io/badge/Profile%20Views-${views}-${color ?? 'blue'}?style=${style ?? 'for-the-badge'}`;
         db.query(`INSERT INTO \`profileviews\` (\`identifier\`, \`views\`) VALUES (${db.getPool().escape(profile)}, '1');`);
     } else {
         views = views['views'];
-        url = `https://img.shields.io/badge/Profile%20Views-${views + 1}-blue?style=${style ?? 'for-the-badge'}`;
+        url = `https://img.shields.io/badge/Profile%20Views-${views + 1}-${color ?? 'blue'}?style=${style ?? 'for-the-badge'}`;
         db.query(`UPDATE \`profileviews\` SET \`views\` = '${views + 1}' WHERE \`profileviews\`.\`identifier\` = ${db.getPool().escape(profile)};`);
     }
     console.log(views);
