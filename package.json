@@ -27,7 +27,7 @@
         "dotenv": "^16.5.0",
         "express": "^5.1.0",
         "helmet": "^8.1.0",
-        "mysql2": "^3.14.0"
+        "mysql2": "^3.14.1"
     },
     "devDependencies": {
         "@types/express": "^5.0.1",
